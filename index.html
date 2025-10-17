@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KASHMIRI HACKER</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary-color: #ff00ff; /* Neon Magenta */
+      --secondary-color: #00ffff; /* Neon Cyan */
+      --accent-color: #ffff00; /* Neon Yellow */
+      --background-color: #0a0014; /* Dark Purple */
+      --card-color: #1a0a2e; /* Darker Purple */
+      --text-color: #ffffff;
+      --hover-color: #2a1a3e;
+      --border-color: rgba(255, 0, 255, 0.3);
+      --neon-glow-primary: 0 0 10px rgba(255, 0, 255, 0.8),
+                   0 0 20px rgba(255, 0, 255, 0.6),
+                   0 0 30px rgba(255, 0, 255, 0.4);
+      --neon-glow-secondary: 0 0 10px rgba(0, 255, 255, 0.8),
+                   0 0 20px rgba(0, 255, 255, 0.6),
+                   0 0 30px rgba(0, 255, 255, 0.4);
+      --neon-glow-accent: 0 0 10px rgba(255, 255, 0, 0.8),
+                   0 0 20px rgba(255, 255, 0, 0.6),
+                   0 0 30px rgba(255, 255, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--background-color), #000000);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card-color);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--neon-glow-primary);
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+      z-index: -1;
+      filter: blur(20px);
+      opacity: 0.3;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: var(--background-color);
+      box-shadow: var(--neon-glow-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+      z-index: -1;
+      filter: blur(15px);
+      opacity: 0.7;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .social-icons a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-icons a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover::before {
+      transform: translateY(0);
+    }
+
+    .social-icons a.youtube { 
+      background: #FF0000; 
+      box-shadow: 0 0 15px #FF0000, 0 0 25px rgba(255, 0, 0, 0.5); 
+    }
+    .social-icons a.telegram { 
+      background: #0088cc; 
+      box-shadow: 0 0 15px #0088cc, 0 0 25px rgba(0, 136, 204, 0.5); 
+    }
+    .social-icons a.whatsapp { 
+      background: #0cfa10; 
+      box-shadow: 0 0 15px #0cfa10, 0 0 25px rgba(12, 250, 16, 0.5); 
+    }
+    .social-icons a.github { 
+      background: #333; 
+      box-shadow: 0 0 15px #333, 0 0 25px rgba(51, 51, 51, 0.5); 
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15) translateY(-5px);
+      box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--secondary-color);
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--hover-color);
+      color: var(--text-color);
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      background: rgba(42, 26, 62, 0.8);
+    }
+
+    .generate-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      border-radius: 12px;
+      color: var(--background-color);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+      box-shadow: var(--neon-glow-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .generate-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .generate-btn:hover::before {
+      left: 100%;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+    }
+
+    .code-display {
+      background: var(--hover-color);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+      position: relative;
+    }
+
+    .code-display::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+    }
+
+    .copy-btn {
+      width: 100%;
+      padding: 15px;
+      background: transparent;
+      border: 2px solid var(--secondary-color);
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--secondary-color);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .copy-btn:hover {
+      background: rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .success-message {
+      color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 18px;
+      text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+    }
+
+    .error-message {
+      color: #ff3e3e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 16px;
+      text-shadow: 0 0 5px rgba(255, 62, 62, 0.5);
+    }
+
+    .loading {
+      display: none;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .loading i {
+      font-size: 28px;
+      color: var(--secondary-color);
+      animation: spin 1s linear infinite;
+      text-shadow: var(--neon-glow-secondary);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Toast styles */
+    #toast {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--background-color);
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: var(--neon-glow-primary);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+        border-radius: 15px;
+      }
+
+      .code-display {
+        font-size: 16px;
+        min-height: 60px;
+      }
+      
+      .title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo"><i class="fas fa-robot"></i></div>
+      <h1 class="title">ANAYAT-AI PAIR</h1>
+      <p class="subtitle">Generate your WhatsApp pair code</p>
+      <div class="social-icons">
+        <a href="https://youtube.com/@anayatsarkar1?si=VqBMrcAsgzPGxK2V" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com/ANAYAT-AI/ANAYAT-AI?tab=readme-ov-file" target="_blank" class="telegram"><i class="fab fa-github"></i></a>
+        <a href="https://whatsapp.com/channel/0029VbAm8LqL2ATpxklIct2g" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/ANAYAT-AI/ANAYAT-AI?tab=readme-ov-file" target="_blank" class="github"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label">Enter your WhatsApp number with country code</label>
+      <input type="tel" id="mobileNumber" class="input-field" placeholder="923452401207" pattern="[0-9]{8,}" title="Please enter your full phone number including country code">
+      <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 5px;">Example: 923452401207 (92 for Pakistan)</p>
+    </div>
+
+    <button class="generate-btn" id="submit">
+      <i class="fas fa-key"></i> Generate Pair Code
+    </button>
+
+    <div class="loading" id="loading">
+      <i class="fas fa-spinner"></i>
+    </div>
+
+    <div class="code-display" id="codeDisplay">
+      Your pair code will appear here
+    </div>
+
+    <button class="copy-btn" id="copy" onclick="copyCode()">
+      <i class="fas fa-copy"></i> Copy Code
+    </button>
+
+    <div class="footer">
+      <p>© 2025 KASHMIRI | HACKER ☠️</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast">Code Copied</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    document.getElementById("submit").addEventListener("click", async (e) => {
+      e.preventDefault();
+      const mobileNumberInput = document.getElementById("mobileNumber");
+      const codeDisplay = document.getElementById("codeDisplay");
+      const loadingSpinner = document.getElementById("loading");
+
+      const mobileNumber = mobileNumberInput.value.trim();
+      if (!mobileNumber) {
+        codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter your WhatsApp number</div>';
+        document.getElementById("copy").style.display = "none";
+        return;
+      }
+
+      loadingSpinner.style.display = "block";
+      codeDisplay.innerHTML = '';
+      document.getElementById("copy").style.display = "none";
+
+      try {
+        const response = await axios(`/code?number=${mobileNumber.replace(/[^0-9]/g, "")}`);
+        const code = response.data.code || "Service Unavailable";
+        if (code === "Service Unavailable") {
+          codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Service Unavailable</div>';
+        } else {
+          codeDisplay.innerHTML = `<div class="success-message"><i class="fas fa-check-circle"></i> CODE: ${code}</div>`;
+          document.getElementById("copy").style.display = "flex";
+        }
+      } catch (error) {
+        console.error("Error generating code:", error);
+        codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Error generating code. Please try again.</div>';
+      } finally {
+        loadingSpinner.style.display = "none";
+      }
+    });
+
+    function copyCode() {
+      const codeDisplay = document.getElementById("codeDisplay").innerText;
+      const code = codeDisplay.replace('CODE: ', '');
+      const copyBtn = document.getElementById("copy");
+
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        copyBtn.disabled = true;
+        copyBtn.style.opacity = "0.6";
+        copyBtn.style.cursor = "not-allowed";
+
+        const toast = document.getElementById("toast");
+        toast.style.display = "block";
+        toast.style.opacity = "1";
+
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+          copyBtn.disabled = false;
+          copyBtn.style.opacity = "1";
+          copyBtn.style.cursor = "pointer";
+
+          toast.style.opacity = "0";
+          setTimeout(() => {
+            toast.style.display = "none";
+          }, 300);
+        }, 2000);
+      }).catch(err => {
+        console.error("Failed to copy text: ", err);
+      });
+    }
+  </script>
+</body>
+</html>
